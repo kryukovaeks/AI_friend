@@ -3,7 +3,7 @@ import streamlit as st
 #from streamlit_chat import message
 
 # Setting page title and header
-st.set_page_config(page_title="AVA", page_icon=":robot_face:")
+st.set_page_config(page_title="AI Friend", page_icon=":robot_face:")
 st.markdown("<h1 style='text-align: center;'>Hello, this is me, Alice, your best friend. How are you?</h1>", unsafe_allow_html=True)
 
 
