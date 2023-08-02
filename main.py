@@ -69,7 +69,7 @@ def generate_response(prompt):
         messages=st.session_state['messages']
     )
     response = completion.choices[0].message.content
-    st.session_state['messages'].append({"role": "close friend", "content": response})
+    st.session_state['messages'].append({"role": "assistant", "content": response})
 
     # print(st.session_state['messages'])
     total_tokens = completion.usage.total_tokens
