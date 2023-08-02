@@ -1,6 +1,6 @@
 import openai
 import streamlit as st
-from streamlit_chat import message
+#from streamlit_chat import message
 
 # Setting page title and header
 st.set_page_config(page_title="AVA", page_icon=":robot_face:")
@@ -107,8 +107,11 @@ with container:
 if st.session_state['generated']:
     with response_container:
         for i in range(len(st.session_state['generated'])):
-            message(st.session_state["past"][i], is_user=True, key=str(i) + '_user')
-            message(st.session_state["generated"][i], key=str(i))
+            st.markdown(f"**You**: {st.session_state['past'][i]}")
+            st.markdown(f"**AVA**: {st.session_state['generated'][i]}")
+            st.write(
+                f"Model used: {st.session_state['model_name'][i]}; Number of tokens: {st.session_state['total_tokens'][i]}; Cost: ${st.session_state['cost'][i]:.5f}")
+            counter_placeholder.write(f"Total cost of this conversation: ${st.session_state['total_cost']:.5f}")
             st.write(
                 f"Model used: {st.session_state['model_name'][i]}; Number of tokens: {st.session_state['total_tokens'][i]}; Cost: ${st.session_state['cost'][i]:.5f}")
             counter_placeholder.write(f"Total cost of this conversation: ${st.session_state['total_cost']:.5f}")
