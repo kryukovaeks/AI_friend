@@ -21,7 +21,7 @@ if 'past' not in st.session_state:
     st.session_state['past'] = []
 if 'messages' not in st.session_state:
     st.session_state['messages'] = [
-        {"role": "system", "content": "You are a helpful assistant."}
+        {"role": "system", "content": "You are a close friend who understands in psychology."}
     ]
 if 'model_name' not in st.session_state:
     st.session_state['model_name'] = []
@@ -50,7 +50,7 @@ if clear_button:
     st.session_state['generated'] = []
     st.session_state['past'] = []
     st.session_state['messages'] = [
-        {"role": "system", "content": "You are a helpful assistant."}
+        {"role": "system", "content": "You are a close friend who understands in psychology."}
     ]
     st.session_state['number_tokens'] = []
     st.session_state['model_name'] = []
