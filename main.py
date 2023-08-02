@@ -4,7 +4,7 @@ import streamlit as st
 
 # Setting page title and header
 st.set_page_config(page_title="AVA", page_icon=":robot_face:")
-st.markdown("<h1 style='text-align: center;'>AVA - a totally harmless chatbot 😬</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Your close AI friend: tell me all</h1>", unsafe_allow_html=True)
 
 
 st.write('Enter your parameters below:')
