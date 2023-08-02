@@ -6,9 +6,13 @@ from streamlit_chat import message
 st.set_page_config(page_title="AVA", page_icon=":robot_face:")
 st.markdown("<h1 style='text-align: center;'>AVA - a totally harmless chatbot 😬</h1>", unsafe_allow_html=True)
 
-# Set org ID and API key
-openai.organization = "<YOUR_OPENAI_ORG_ID>"
-openai.api_key = "<YOUR_OPENAI_API_KEY>"
+
+st.write('Enter your parameters below:')
+# Ask user for OpenAI API Key
+openai_key_input = st.text_input("Enter your OpenAI API Key:", type="password")  # Using type="password" hides the entered characters
+if openai_key_input:
+    openai.api_key = openai_key_input
+
 
 # Initialise session state variables
 if 'generated' not in st.session_state:
@@ -65,7 +69,7 @@ def generate_response(prompt):
         messages=st.session_state['messages']
     )
     response = completion.choices[0].message.content
-    st.session_state['messages'].append({"role": "assistant", "content": response})
+    st.session_state['messages'].append({"role": "close friend", "content": response})
 
     # print(st.session_state['messages'])
     total_tokens = completion.usage.total_tokens
