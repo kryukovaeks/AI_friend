@@ -87,12 +87,12 @@ with container:
     with st.form(key='my_form', clear_on_submit=True):
         user_input = st.text_area("You:", key='input')
         #submit_button = st.form_submit_button(label='Send')
-        if user_input:
-            output, total_tokens, prompt_tokens, completion_tokens = generate_response(user_input)
-            st.session_state['past'].append(user_input)
-            st.session_state['generated'].append(output)
-            st.session_state['model_name'].append(model_name)
-            st.session_state['total_tokens'].append(total_tokens)
+    if user_input:
+        output, total_tokens, prompt_tokens, completion_tokens = generate_response(user_input)
+        st.session_state['past'].append(user_input)
+        st.session_state['generated'].append(output)
+        st.session_state['model_name'].append(model_name)
+        st.session_state['total_tokens'].append(total_tokens)
 
     if submit_button and user_input:
         output, total_tokens, prompt_tokens, completion_tokens = generate_response(user_input)
