@@ -4,7 +4,7 @@ import streamlit as st
 
 # Setting page title and header
 st.set_page_config(page_title="AVA", page_icon=":robot_face:")
-st.markdown("<h1 style='text-align: center;'>Your close AI friend: tell me all</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Hello, this is me, Alice, your best friend. How are you?</h1>", unsafe_allow_html=True)
 
 
 st.write('Enter your parameters below:')
@@ -109,9 +109,9 @@ if st.session_state['generated']:
         for i in range(len(st.session_state['generated'])):
             st.markdown(f"**You**: {st.session_state['past'][i]}")
             st.markdown(f"**AVA**: {st.session_state['generated'][i]}")
-            st.write(
-                f"Model used: {st.session_state['model_name'][i]}; Number of tokens: {st.session_state['total_tokens'][i]}; Cost: ${st.session_state['cost'][i]:.5f}")
+            #st.write(
+            #    f"Model used: {st.session_state['model_name'][i]}; Number of tokens: {st.session_state['total_tokens'][i]}; Cost: ${st.session_state['cost'][i]:.5f}")
             counter_placeholder.write(f"Total cost of this conversation: ${st.session_state['total_cost']:.5f}")
-            st.write(
-                f"Model used: {st.session_state['model_name'][i]}; Number of tokens: {st.session_state['total_tokens'][i]}; Cost: ${st.session_state['cost'][i]:.5f}")
+            #st.write(
+            #   f"Model used: {st.session_state['model_name'][i]}; Number of tokens: {st.session_state['total_tokens'][i]}; Cost: ${st.session_state['cost'][i]:.5f}")
             counter_placeholder.write(f"Total cost of this conversation: ${st.session_state['total_cost']:.5f}")
